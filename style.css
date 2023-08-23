@@ -90,6 +90,7 @@ main {
   text-align: center;
   transition: all 0.75s;
 }
+
 .container-potential {
   background-color: #333;
   margin-bottom: 2rem;
@@ -100,11 +101,21 @@ main {
   text-transform: uppercase;
   margin-bottom: 1rem;
   font-size: 1.7rem;
-  color: #ddd;
 }
 
 .current-score {
   font-size: 3.5rem;
+}
+.currentStrike  {
+  background-color: rgba(237, 222, 87, 0.988);
+  opacity: 0.8;
+  border-radius: 9px;
+  color: #c7365f;
+  width: 50%;
+  padding: 2rem;
+  text-align: center;
+  transition: all 0.75s;
+  border: 2px #c7365f solid;
 }
 
 /* ABSOLUTE POSITIONED ELEMENTS */

@@ -16,8 +16,10 @@ const btnRoll=document.querySelector('.btn--roll');
 const btnHold=document.querySelector('.btn--hold');
 const name0El=document.querySelector('#name--0');
 const name1El=document.querySelector('#name--1');
+const currentStrike0El=document.querySelector('#current0');
+const currentStrike1El=document.querySelector('#current1');
 
-let scores,currentScore,activePlayer,playing,potential;
+let scores,currentScore,activePlayer,playing,currentCounter;
 
 //starting conditions
 const init=function(){
@@ -42,16 +44,25 @@ const init=function(){
   player1El.classList.remove('player--active');
   document.querySelector('#name--0').textContent='PLAYER 1';
   document.querySelector('#name--1').textContent='PLAYER 2';
+  currentStrike0El.classList.remove('currentStrike');
+  currentStrike1El.classList.remove('currentStrike');
 
 };
 init();
 
 const switchPlayer=function(){
-  document.querySelector(`#current--${activePlayer}`).textContent=0;
+    document.querySelector(`#current--${activePlayer}`).textContent=0;
+    document.querySelector(`#currentLabel--${activePlayer}`).textContent='current';
     currentScore=0;
     activePlayer=activePlayer===0 ? activePlayer=1 : 0;
     player0El.classList.toggle('player--active');
     player1El.classList.toggle('player--active');
+    currentCounter=0;
+    currentStrike0El.classList.remove('currentStrike');
+    currentStrike1El.classList.remove('currentStrike');
+
+
+    
 
 };
 
@@ -69,8 +80,17 @@ btnRoll.addEventListener('click',function(){
   if(dice!==1){
     //add dice to current score
     currentScore+=dice;
+    currentCounter++;
     document.querySelector(`#current--${activePlayer}`).textContent=currentScore;
     document.querySelector(`#potential--${activePlayer}`).textContent=scores[activePlayer]+currentScore;
+    if(currentCounter>=3)
+    {
+    document.querySelector(`#currentLabel--${activePlayer}`).textContent='current 🔥';
+    activePlayer===0 ? currentStrike0El.classList.add('currentStrike') :
+    currentStrike1El.classList.add('currentStrike');
+    
+    }
+
   }else{
     //switch to next player
     scores[activePlayer]=0;
