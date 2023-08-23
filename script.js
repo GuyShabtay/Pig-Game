@@ -8,6 +8,8 @@ const score1El=document.querySelector('#score--1');
 //const score0El=document.getElementById('score--0')
 const current0El=document.querySelector('#current--0');
 const current1El=document.querySelector('#current--1');
+const potential0El=document.querySelector('#potential--0');
+const potential1El=document.querySelector('#potential--1');
 const diceEl=document.querySelector('.dice');
 const btnNew=document.querySelector('.btn--new');
 const btnRoll=document.querySelector('.btn--roll');
@@ -15,7 +17,7 @@ const btnHold=document.querySelector('.btn--hold');
 const name0El=document.querySelector('#name--0');
 const name1El=document.querySelector('#name--1');
 
-let scores,currentScore,activePlayer,playing;
+let scores,currentScore,activePlayer,playing,potential;
 
 //starting conditions
 const init=function(){
@@ -23,6 +25,7 @@ const init=function(){
   
   scores=[0,0];
   currentScore=0;
+  currentCounter=0;
   activePlayer=0;
   playing=true;
   
@@ -30,6 +33,8 @@ const init=function(){
   score1El.textContent=0;
   current0El.textContent=0;
   current1El.textContent=0;
+  potential0El.textContent=0;
+  potential1El.textContent=0;
   diceEl.classList.add('hidden');
   player0El.classList.remove('player--winner');
   player1El.classList.remove('player--winner');
@@ -65,11 +70,12 @@ btnRoll.addEventListener('click',function(){
     //add dice to current score
     currentScore+=dice;
     document.querySelector(`#current--${activePlayer}`).textContent=currentScore;
+    document.querySelector(`#potential--${activePlayer}`).textContent=scores[activePlayer]+currentScore;
   }else{
     //switch to next player
     scores[activePlayer]=0;
-    document.querySelector(`#score--${activePlayer}`).textContent=scores[activePlayer];
-
+    document.querySelector(`#score--${activePlayer}`).textContent=0;
+    document.querySelector(`#potential--${activePlayer}`).textContent=0;
     switchPlayer();
 
     
