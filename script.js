@@ -46,6 +46,9 @@ const init=function(){
   document.querySelector('#name--1').textContent='PLAYER 2';
   currentStrike0El.classList.remove('currentStrike');
   currentStrike1El.classList.remove('currentStrike');
+  document.querySelector('#currentLabel--0').textContent='current';
+  document.querySelector('#currentLabel--1').textContent='current';
+
 
 };
 init();
@@ -112,7 +115,7 @@ btnHold.addEventListener('click',function(){
     diceEl.classList.add('hidden');
     document.querySelector(`.player--${activePlayer}`).classList.add('player--winner');
     document.querySelector(`.player--${activePlayer}`).classList.remove('player--active');
-    document.querySelector(`#name--${activePlayer}`).textContent=`PLAYER ${activePlayer} WINS !`;
+    document.querySelector(`#name--${activePlayer}`).textContent=`PLAYER ${activePlayer+1} WINS !`;
   }else{
   //switch to the next player
   switchPlayer();
