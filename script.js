@@ -53,6 +53,7 @@ init();
 const switchPlayer=function(){
     document.querySelector(`#current--${activePlayer}`).textContent=0;
     document.querySelector(`#currentLabel--${activePlayer}`).textContent='current';
+    document.querySelector(`#potential--${activePlayer}`).textContent=scores[activePlayer];
     currentScore=0;
     activePlayer=activePlayer===0 ? activePlayer=1 : 0;
     player0El.classList.toggle('player--active');
@@ -93,9 +94,6 @@ btnRoll.addEventListener('click',function(){
 
   }else{
     //switch to next player
-    scores[activePlayer]=0;
-    document.querySelector(`#score--${activePlayer}`).textContent=0;
-    document.querySelector(`#potential--${activePlayer}`).textContent=0;
     switchPlayer();
 
     
@@ -108,7 +106,7 @@ btnHold.addEventListener('click',function(){
   scores[activePlayer]+=currentScore;
   document.querySelector(`#score--${activePlayer}`).textContent=scores[activePlayer];
   //check if player's score>=100
-  if (scores[activePlayer]>=80){
+  if (scores[activePlayer]>=100){
     //finish the game
     playing=false;
     diceEl.classList.add('hidden');
