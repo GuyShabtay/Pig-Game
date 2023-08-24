@@ -240,16 +240,16 @@ main {
   }
 
   .btn--new {
-    top: -7vh;
+    top: -8vh;
     position: absolute;
   }
   .btn--roll {
 
-    bottom: -22vh;
+    bottom: -9vh;
     position: absolute;
   }
   .btn--hold {
-    bottom: -29vh;
+    bottom: -16vh;
     position: absolute;
     }
   /* .player {
