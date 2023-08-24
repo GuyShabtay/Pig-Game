@@ -154,15 +154,15 @@ main {
 
 .btn--new {
   align-self: flex-start;
-  margin-top: 11%;
+  margin-top: 21vh;
 }
 .btn--roll {
   align-self: flex-end;
-  margin-bottom: 18%;
+  margin-bottom: 34vh;
 }
 .btn--hold {
   align-self: flex-end;
-  margin-bottom: 14%;
+  margin-bottom: 27vh;
 }
 
 .btn:active {
