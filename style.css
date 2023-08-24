@@ -254,14 +254,14 @@ main {
   
   /* ELEMENTS */
   .name {
-    font-size: 3rem;
+    font-size: 2.5rem;
     /* padding-top: 1rem; */
     margin-bottom: 0%;
     /* bottom:8rem; */
   }
   
   .score {
-    font-size: 6rem;
+    font-size: 4rem;
     font-weight: 300;
     color: #c7365f;
     margin-bottom: 0rem;
@@ -321,9 +321,9 @@ main {
   .dice {
     position: absolute;
     left: 50%;
-    top: 46%;
+    top: 44%;
     transform: translateX(-50%);
-    height: 8%;
+    height: 12%;
     box-shadow: 0 2rem 5rem rgba(0, 0, 0, 0.2);
   }
   
