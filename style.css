@@ -33,7 +33,7 @@ main {
   filter: blur();
   box-shadow: 0 3rem 5rem rgba(0, 0, 0, 0.25);
   border-radius: 9px;
-  overflow: hidden;
+  overflow: visible;
   display: flex;
   
   
@@ -144,6 +144,7 @@ main {
   padding: 0.7rem 2.5rem;
   border-radius: 50rem;
   box-shadow: 0 1.75rem 3.5rem rgba(0, 0, 0, 0.1);
+  white-space: nowrap;
 }
 
 .btn::first-letter {
@@ -153,17 +154,18 @@ main {
 }
 
 .btn--new {
-  align-self: flex-start;
-  margin-top: 21vh;
+  top: 5%;
+  position: absolute;
 }
 .btn--roll {
-  align-self: flex-end;
-  margin-bottom: 34vh;
+
+  bottom: 25%;
+  position: absolute;
 }
 .btn--hold {
-  align-self: flex-end;
-  margin-bottom: 27vh;
-}
+  bottom: 14%;
+  position: absolute;
+  }
 
 .btn:active {
   transform: translate(-50%, 3px);
@@ -236,16 +238,20 @@ main {
   .current-score {
     font-size: 1.7rem;
   }
+
   .btn--new {
-    margin-top: 1.6rem;
-    /* min-width: 60%; */
+    top: -7vh;
+    position: absolute;
   }
   .btn--roll {
-    margin-bottom: 10rem;
+
+    bottom: -22vh;
+    position: absolute;
   }
   .btn--hold {
-    margin-bottom: 4rem;
-  }
+    bottom: -29vh;
+    position: absolute;
+    }
   /* .player {
     padding: 9rem 1rem;
   } */
@@ -286,7 +292,7 @@ main {
     filter: blur();
     box-shadow: 0 3rem 5rem rgba(0, 0, 0, 0.25);
     border-radius: 9px;
-    overflow: hidden;
+    overflow: visible;
     display: flex;
     flex-direction: column;
     margin-top: 8rem;
