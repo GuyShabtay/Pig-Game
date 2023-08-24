@@ -109,7 +109,7 @@ btnHold.addEventListener('click',function(){
   scores[activePlayer]+=currentScore;
   document.querySelector(`#score--${activePlayer}`).textContent=scores[activePlayer];
   //check if player's score>=100
-  if (scores[activePlayer]>=10){
+  if (scores[activePlayer]>=100){
     //finish the game
     playing=false;
     diceEl.classList.add('hidden');
