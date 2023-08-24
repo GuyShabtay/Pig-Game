@@ -20,6 +20,8 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
+  border-radius: 9px;
+
   
 }
 
@@ -46,7 +48,15 @@ main {
   flex-direction: column;
   align-items: center;
   transition: all 0.75s;
+}
 
+.player--0{
+  border-top-left-radius: 9px;
+  border-bottom-left-radius: 9px;
+}
+.player--1{
+  border-top-right-radius: 9px;
+  border-bottom-right-radius: 9px;
 }
 
 /* ELEMENTS */
@@ -311,6 +321,8 @@ main {
     transition: all 0.75s;
     /* border:2px solid green; */
     max-height: 30rem;
+    border-top-left-radius: 9px;
+    border-top-right-radius: 9px;
   }
   .player.player--1 {
     flex: 50%;
@@ -322,6 +334,8 @@ main {
     transition: all 0.75s;
     /* border:2px solid green; */
     max-height: 30rem;
+    border-bottom-left-radius: 9px;
+    border-bottom-right-radius: 9px;
   }
 
   .dice {
